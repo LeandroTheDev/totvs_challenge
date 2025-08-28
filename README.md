@@ -24,6 +24,6 @@
 - > Dependendo do sistema precisa de privilegios (sudo)
 
 ### Iniciando (Back)
-- Instale [Java 21](https://www.oracle.com/br/java/technologies/downloads/)
+- Instale [Java 24](https://www.oracle.com/br/java/technologies/downloads/)
 - Adicione o caminho de instalação Java a variavel [PATH](https://www.java.com/en/download/help/path.html)
 - ./gradlew bootRun
