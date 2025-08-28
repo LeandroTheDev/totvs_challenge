@@ -22,6 +22,7 @@
 - cd ./dist
 - python -m http.server 80
 - > Dependendo do sistema precisa de privilegios (sudo)
+- > Você pode abrir em depuração também nesse caso use o comando ``npm run dev``
 
 ### Iniciando (Back)
 - Instale [Java 24](https://www.oracle.com/br/java/technologies/downloads/)
