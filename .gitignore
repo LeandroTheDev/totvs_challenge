@@ -1,0 +1,10 @@
+front/node_modules
+front/dist
+front/package-lock.json
+
+back/.gradle
+back/vscode
+back/build
+back/bin
+
+.vscode
