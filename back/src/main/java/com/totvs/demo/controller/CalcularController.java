@@ -31,6 +31,16 @@ public class CalcularController {
                 System.out.println("TaxaJuros: " + request.getTaxaJuros());
                 System.out.println("--------------------");
 
+                if (request.getPrimeiroPagamento().isAfter(request.getDataInicial())
+                                || request.getPrimeiroPagamento().isAfter(request.getDataFinal())) {
+                        throw new IllegalArgumentException(
+                                        "Primeiro pagamento deve ser maior que a data inicial e menor que a final");
+                }
+
+                if (request.getDataInicial().isAfter(request.getDataFinal())) {
+                        throw new IllegalArgumentException("Data inicial deve ser menor que a data final");
+                }
+
                 // Adiciona mais um mes para finalizar a tabela com chave de ouro
                 // request.setDataFinal(request.getDataFinal().plusMonths(1));
 
@@ -111,7 +121,7 @@ public class CalcularController {
                                                         ||
                                                         // Ou se for superior
                                                         dataAtual.isAfter(primeiroPagamento))) {
-                                dataAtual = primeiroPagamento;
+                                // dataAtual = primeiroPagamento;
                                 iniciouPagamento = true;
                         }
 
@@ -186,7 +196,6 @@ public class CalcularController {
                         dataAtual = LocalDate.of(proximoMes.getYear(), proximoMes.getMonth(), dia);
                         System.out.println("[Proximo Mes] Agora: " + dataAtual);
                         System.out.println("-------------");
-
                 }
 
                 return parcelas;
